@@ -34,7 +34,7 @@ Makes a real-time forecast of the external magnetic field perturbation (i.e.
  
 @author: Robert Shore: robore@bas.ac.uk
 """
-output_version_identifier = 'BRTFv2p2'#Version string, for author's reference.
+output_version_identifier = 'BRTFv2p3'#Version string, for author's reference.
 
 #%% Load packages.
 
@@ -129,12 +129,12 @@ if(LT_bin_ends_day_fraction[len(LT_bin_ends_day_fraction)-1,0] == 0):
 # performed by program 'RTRv3p0'.
 
 #Load the model coefficients.
-with open(os.path.join(WORKDIR,'Storage_for_model_coefficients','RTRv3p0_model_reg_coefs.pkl'),'rb') as f:  # Python 3: open(..., 'rb')
-    model_coefficients_all_stations_all_components_all_ensemble = pickle.load(f)
+with open(os.path.join(WORKDIR,'Storage_for_model_coefficients','GGF_Training_Model_Stored_Model_Coefficients.pkl'),'rb') as f:  # Python 3: open(..., 'rb')
+    all_randomised_storms_sets_model_coeffs = pickle.load(f)
 #End indenting for this load command.
 
-#De-convert from list.
-model_coefficients_all_stations_all_components_all_ensemble = model_coefficients_all_stations_all_components_all_ensemble[0]#size [3 stations by 24 LT bins by 3 components by 6 model parameters by 100 trained model ensemble instances].
+#Rename, and extract from list.
+model_coefficients_all_stations_all_components_all_ensemble = all_randomised_storms_sets_model_coeffs[0]#size [3 stations by 24 LT bins by 3 components by 6 model parameters by 100 trained model ensemble instances].
 
 #%% Define Met Office API key.
 
