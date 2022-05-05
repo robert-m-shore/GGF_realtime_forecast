@@ -129,7 +129,7 @@ if(LT_bin_ends_day_fraction[len(LT_bin_ends_day_fraction)-1,0] == 0):
 # performed by program 'RTRv3p0'.
 
 #Load the model coefficients.
-with open(os.path.join(WORKDIR,'Storage_for_model_coefficients','GGF_Training_Model_Stored_Model_Coefficients.pkl'),'rb') as f:  # Python 3: open(..., 'rb')
+with open(os.path.join(WORKDIR,'Storage_for_model_coefficients','GGF_Training_Model_Dataset_of_Stored_Model_Coefficients.pkl'),'rb') as f:  # Python 3: open(..., 'rb')
     all_randomised_storms_sets_model_coeffs = pickle.load(f)
 #End indenting for this load command.
 
